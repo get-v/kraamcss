@@ -1,0 +1,268 @@
+/* Chatbot Launcher (chat bubble) */
+.vfrc-launcher {
+  color: #444444; /* Dark gray text */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; /* Medium weight for non-plain text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vfrc-launcher:hover {
+  box-shadow: 0 0 10px rgba(179, 199, 214, 0.5); /* Soft, non-intrusive glow */
+  transform: scale(1.02); /* Slight scaling on hover */
+}
+
+/* Chat Header and Title */
+.vfrc-header {
+  background-color: #E1DED5; /* Very light gray */
+  border-bottom: 1px solid #e2ded5; /* Soft beige */
+  animation: fadeIn 1s ease; /* Fade-in effect */
+}
+
+.vfrc-header--title {
+  font-family: 'Montserrat', sans-serif;
+  color: #444444; /* Dark gray for strong contrast */
+  margin-bottom: 10px; /* Lower the line under the title */
+}
+
+/* Assistant Info Title and Description */
+.vfrc-assistant-info--title, .vfrc-assistant-info--description {
+  font-family: 'Montserrat', sans-serif; /* Professional and clean */
+  color: #444444; /* Dark gray text */
+  font-weight: 300; /* Light for plain text */
+}
+
+/* Assistant Response (System Messages) */
+.vfrc-system-response .vfrc-message {
+  background-color: #f8f8f8; /* Very light gray background */
+  color: #444444; /* Dark gray text */
+  border: 1px solid #e2ded5; /* Soft beige border */
+  font-family: 'Montserrat', sans-serif; /* Clean and readable */
+  font-weight: 500; /* Medium weight for better readability */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle depth */
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-right: auto; /* Push system messages to the left */
+  max-width: 90%; /* Adjust to fit your design */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.vfrc-system-response .vfrc-message:hover {
+  transform: scale(1.02); /* Slight scaling on hover */
+  color: #232322; /* Change text color on hover */
+}
+
+/* User Response (User Messages) */
+.vfrc-user-response .vfrc-message {
+  background-color: #e2ded5; /* Soft beige background */
+  color: #444444; /* Dark gray text */
+  border: 1px solid #f8f8f8; /* Very light gray border */
+  font-family: 'Montserrat', sans-serif; /* Clean and readable */
+  font-weight: 300; /* Light for plain text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle depth */
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-left: auto; /* Push message to the right */
+  max-width: 100%; /* Adjust to fit your design */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.vfrc-user-response .vfrc-message:hover {
+  transform: scale(1.02); /* Slight scaling on hover */
+  color: #444444; /* Change text color on hover */
+}
+
+/* Chatbot Buttons */
+.vfrc-button {
+  background-color: transparent; /* Transparent background */
+  color: #444444; /* Dark gray text */
+  font-family: 'Montserrat', sans-serif; /* Clean and readable */
+  font-weight: 500; /* Medium weight for buttons */
+  border: 1px solid #444444; /* Dark gray border */
+  border-radius: 4px;
+  padding: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.vfrc-button:hover {
+  background-color: #e2ded5; /* Change background color on hover */
+  color: #444444; /* Dark gray text on hover */
+  transform: scale(1.02); /* Slight scaling on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Chatbot Carousel and System Buttons */
+.vfrc-carousel--button, .vfrc-system-response .vfrc-button {
+  background-color: transparent; /* Transparent background */
+  color: #444444; /* Dark gray text */
+}
+
+/* End Chat Button */
+.vfrc-prompt .vfrc-button {
+  background-color: transparent; /* Transparent background */
+  color: #444444; /* Dark gray text */
+  border: 1px solid #444444; /* Dark gray border */
+}
+
+.vfrc-prompt .vfrc-button:hover {
+  background-color: #e2ded5; /* Change background color on hover */
+  color: #444444; /* Dark gray text on hover */
+  transform: scale(1.02); /* Slight scaling on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Footer and Input Field */
+.vf-footer, .vfrc-input {
+  background-color: #f8f8f8; /* Very light gray */
+  color: #444444; /* Dark gray text */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; /* Light for plain text */
+  border: 1px solid #e2ded5; /* Soft beige border */
+  transition: border-color 0.3s ease;
+}
+
+.vf-footer:hover, .vfrc-input:hover {
+  border-color: #444444; /* Dark gray border on hover */
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #444444; /* Dark gray text */
+  font-weight: 300; /* Light weight for the typing indicator */
+  margin-top: 5px;
+}
+
+.typing-indicator::before {
+  content: "medewerker type...";
+  margin-right: 10px;
+}
+
+.typing-indicator .dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 3px;
+  background-color: #444444; /* Dark gray */
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+
+/* Bouncing animation for dots */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Placeholder and Button Text Updates */
+.vfrc-chat-input textarea {
+  background-image: none;
+  font-family: 'Montserrat', sans-serif; /* Match font family */
+}
+
+.vfrc-chat-input textarea::-moz-placeholder {
+  color: transparent;
+}
+
+.vfrc-chat-input textarea::placeholder {
+  color: transparent;
+}
+
+/* Button Styling */
+.vfrc-prompt button.vfrc-button--primary,
+footer button.vfrc-button--primary {
+  position: relative;
+  color: transparent !important; /* Ensure button text is transparent */
+}
+
+.vfrc-prompt button.vfrc-button--primary::after,
+footer button.vfrc-button--primary::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  color: #000000; /* Very light gray text */
+  font-family: 'Montserrat', sans-serif; /* Consistent font */
+  font-weight: 500; /* Medium weight for readability */
+}
+
+/* Button Text Content */
+.vfrc-prompt button.vfrc-button--primary::after,
+footer button.vfrc-button--primary::after {
+  content: "Gesprek starten"; /* Default button text */
+}
+
+.vfrc-prompt button.vfrc-button--primary[label="End Chat"]::after,
+footer button.vfrc-button--primary[label="End Chat"]::after {
+  content: "Gesprek beëindigen"; /* Updated text */
+}
+
+.vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
+footer button.vfrc-button--primary[label=Cancel]::after {
+  content: "Annuleren"; /* Changed text */
+  color: #000000; /* Very light gray text for cancel */
+}
+
+/* Placeholder Image for Textarea */
+.vfrc-chat-input textarea:-moz-placeholder-shown::before {
+  content: "Type your message here...";
+  color: #444444; /* Dark gray for placeholder */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; /* Light weight */
+}
+
+/* Button Hover States */
+.vfrc-prompt button.vfrc-button--primary:hover,
+footer button.vfrc-button--primary:hover {
+  background-color: #e2ded5; /* Light beige background */
+  color: #444444; /* Dark gray text */
+  border: 1px solid #444444; /* Dark gray border */
+}
+
+.vfrc-prompt button.vfrc-button--secondary:hover,
+footer button.vfrc-button--secondary:hover {
+  background-color: #f8f8f8; /* Light gray background */
+  color: #444444; /* Dark gray text */
+  border: 1px solid #444444; /* Dark gray border */
+}
+
+/* Button Text Content */
+.vfrc-prompt button.vfrc-button--primary::after,
+footer button.vfrc-button--primary::after {
+  content: "Gesprek starten"; /* Default button text */
+}
+
+.vfrc-prompt button.vfrc-button--primary[label="End Chat"]::after,
+footer button.vfrc-button--primary[label="End Chat"]::after {
+  content: "Gesprek beëindigen"; /* Updated text */
+}
+
+.vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
+footer button.vfrc-button--primary[label=Cancel]::after {
+  content: "Annuleren"; /* Changed text */
+  color: #030303; /* White text for cancel */
+}
+
+/* Hide Timestamp */
+.vfrc-timestamp {
+  display: none; /* Hide the timestamp */
+}
+
+/* Hide Chat Status */
+.vfrc-chat--status {
+  display: none; /* Hide the chat status */
+}
+
+/* Hide Session Time */
+.vfrc-chat--session-time {
+  display: none; /* Hide the session time */
+}
